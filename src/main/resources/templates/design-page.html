@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>РАНДОМАЙЗЕР НІГТІВ</title>
+
+    <div ><table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Form</th>
+            <th>Color</th>
+            <th>Design</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="manicure : ${manicuresWithColor}">
+            <td th:text="${manicure.id}"></td>
+            <td th:text = "${manicure.form}" ></td>
+            <td th:text="${manicure.color}"></td>
+            <td><a th:text="${manicure.design}" th:href="@{/randomManicure/getByColor/{color}(design=${manicure.design})}"></a></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</head>
+<body>
+
+</body>
+</html>
